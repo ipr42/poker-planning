@@ -32,16 +32,16 @@ services:
     envs:
       - key: APP_APPLICATION__BASE_URL
         scope: RUN_TIME
-        value: ${APP_URL}
+        value: /graphql
 static_sites:
   - environment_slug: node-js
     envs:
       - key: VITE_GRAPHQL_ENDPOINT
         scope: BUILD_TIME
-        value: ${VITE_GRAPHQL_ENDPOINT}
+        value: /graphql
       - key: VITE_GRAPHQL_WS_ENDPOINT
         scope: BUILD_TIME
-        value: ${VITE_GRAPHQL_WS_ENDPOINT}
+        value: /graphql
       - key: VITE_GOOGLE_ANALYTICS_ID
         scope: BUILD_TIME
         value: ${VITE_GOOGLE_ANALYTICS_ID}

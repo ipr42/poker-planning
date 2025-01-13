@@ -1,4 +1,5 @@
 import path from "path";
+
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv, Plugin } from "vite";
@@ -35,6 +36,8 @@ const injectGoogleAnalytics = ({
   },
 });
 
+const ReactCompilerConfig = {};
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -46,7 +49,11 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       TanStackRouterVite(),
-      react(),
+      react({
+        babel: {
+          plugins: [["babel-plugin-react-compiler", ReactCompilerConfig]],
+        },
+      }),
       injectGoogleAnalytics({ mode, GOOGLE_ANALYTICS_ID }),
     ],
     resolve: {

@@ -39,7 +39,7 @@ export const VoteDistributionChart: FC<VoteDistributionChartProps> = ({
       card,
       votes,
     }));
-  }, [room.game.table]);
+  }, [voteCount]);
 
   const maxCardCount = useMemo(() => {
     return Math.max(...chartData.map((card) => card.votes));
