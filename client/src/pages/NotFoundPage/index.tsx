@@ -25,7 +25,7 @@ export function NotFoundPage(): ReactElement {
               Go back home
             </Link>
             <a
-              href="https://github.com/ModPhoenix/poker-planning"
+              href="https://github.com/INQTR/poker-planning"
               className="text-sm font-semibold text-gray-900 dark:text-gray-300"
             >
               Report an issue

@@ -14,7 +14,7 @@ services:
     github:
       branch: main
       deploy_on_push: true
-      repo: ModPhoenix/poker-planning
+      repo: INQTR/poker-planning
     # Active probe used by DigitalOcean's to ensure our application is healthy
     health_check:
       # The path to our health check endpoint! It turned out to be useful in the end!
@@ -48,7 +48,7 @@ static_sites:
     github:
       branch: main
       deploy_on_push: true
-      repo: ModPhoenix/poker-planning
+      repo: INQTR/poker-planning
     name: client
     catchall_document: index.html
     routes:

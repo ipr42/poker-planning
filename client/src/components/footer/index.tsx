@@ -13,7 +13,7 @@ const navigation = {
     },
     {
       name: "GitHub",
-      href: "https://github.com/ModPhoenix/poker-planning",
+      href: "https://github.com/INQTR/poker-planning",
       icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

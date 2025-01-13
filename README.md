@@ -44,7 +44,7 @@ PokerPlanning.org is an open-source, user-friendly online planning poker tool de
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/ModPhoenix/poker-planning.git
+   git clone https://github.com/INQTR/poker-planning.git
    cd poker-planning
    ```
 

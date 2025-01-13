@@ -1,7 +1,7 @@
 [package]
 name = "poker-planning"
 version = "0.1.0"
-authors = ["MoDPhoenix <ivanchenko.b@gmail.com>"]
+authors = ["INQTR <ivanchenko.b@gmail.com>"]
 homepage = "https://pokerplanning.org/"
 edition = "2021"
 

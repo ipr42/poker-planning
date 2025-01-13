@@ -93,7 +93,7 @@ export const HomePage: FC = () => {
                 Start New Game
               </Button>
               <a
-                href="https://github.com/ModPhoenix/poker-planning"
+                href="https://github.com/INQTR/poker-planning"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
               >
                 Code on GitHub <span aria-hidden="true">→</span>
