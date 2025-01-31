@@ -1,7 +1,7 @@
 import { RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 interface UseKeyboardControlsReturn {
-  cardsContainerRef: RefObject<HTMLDivElement>;
+  cardsContainerRef: RefObject<HTMLDivElement | null>;
 }
 
 export function useKeyboardControls(): UseKeyboardControlsReturn {

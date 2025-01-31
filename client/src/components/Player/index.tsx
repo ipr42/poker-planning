@@ -15,21 +15,14 @@ export function Player({
   isGameOver,
   card,
 }: PlayerProps): ReactElement {
-  let cardSymbol;
-
-  if (isCardPicked) {
-    if (card) {
-      cardSymbol = card;
-    } else {
-      cardSymbol = "✅";
-    }
-  } else {
-    if (isGameOver) {
-      cardSymbol = "😴";
-    } else {
-      cardSymbol = "🤔";
-    }
-  }
+  // Determine the symbol to display based on the player's state.
+  const cardSymbol = isCardPicked
+    ? card
+      ? card
+      : "✅"
+    : isGameOver
+    ? "😴"
+    : "🤔";
 
   return (
     <div className="flex flex-col items-center" data-testid="player">

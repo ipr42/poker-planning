@@ -10,7 +10,7 @@ interface TableProps {
   roomId: string;
   isCardsPicked: boolean;
   isGameOver: boolean;
-  innerRef: React.RefObject<HTMLDivElement>;
+  innerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export function Table({
@@ -21,12 +21,14 @@ export function Table({
 }: TableProps): ReactElement {
   const { toast } = useToast();
 
+  // Confirm before starting a new game.
   const startNewGame = useModal({
     title: "Are you sure you want to start a new game?",
     description: "This will reset the current game.",
     confirmationText: "Start new game",
     cancellationText: "Cancel",
   });
+
   const [showCardsMutation, { loading: showCardLoading }] =
     useShowCardsMutation({
       onError: (error) => {
@@ -50,20 +52,12 @@ export function Table({
     });
 
   function handleShowCards() {
-    showCardsMutation({
-      variables: {
-        roomId,
-      },
-    });
+    showCardsMutation({ variables: { roomId } });
   }
 
   function handleResetGame() {
     startNewGame().then(() => {
-      resetGameMutation({
-        variables: {
-          roomId,
-        },
-      });
+      resetGameMutation({ variables: { roomId } });
     });
   }
 
@@ -80,9 +74,9 @@ export function Table({
             className="w-36"
             size="lg"
           >
-            {resetGameLoading ? (
+            {resetGameLoading && (
               <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-            ) : null}
+            )}
             Start New Game
           </Button>
         ) : (
@@ -91,9 +85,9 @@ export function Table({
             disabled={showCardLoading}
             size="lg"
           >
-            {showCardLoading ? (
+            {showCardLoading && (
               <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
-            ) : null}
+            )}
             Reveal cards
           </Button>
         )
