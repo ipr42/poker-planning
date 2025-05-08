@@ -15,6 +15,8 @@ impl Deck {
             id: Uuid::new_v4(),
             cards: vec![
                 "0".to_string(),
+                "0.125".to_string(),
+                "0.5".to_string(),
                 "1".to_string(),
                 "2".to_string(),
                 "3".to_string(),
