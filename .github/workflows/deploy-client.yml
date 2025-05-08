@@ -45,7 +45,7 @@ jobs:
           enablement: true
 
       - name: Create CNAME file
-        run: echo "planning-poker.app" > ./client/dist/CNAME
+        run: echo "planning.patentrenewal.com" > ./client/dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
