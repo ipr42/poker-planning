@@ -46,11 +46,21 @@ export const VoteDistributionChart: FC<VoteDistributionChartProps> = ({
   }, [chartData]);
 
   const averageVote = useMemo(() => {
+    const sizeToValue: Record<string, number> = {
+      XS: 1,
+      S: 2,
+      M: 3,
+      L: 4,
+      XL: 5,
+    };
+    const valueToSize = ["XS", "S", "M", "L", "XL"];
     const numericVotes = room.game.table
-      .map((userCard) => parseFloat(userCard.card || "0"))
-      .filter((vote) => !isNaN(vote));
+      .map((userCard) => sizeToValue[userCard.card || ""])
+      .filter((vote) => vote !== undefined);
     const sum = numericVotes.reduce((acc, vote) => acc + vote, 0);
-    return numericVotes.length > 0 ? sum / numericVotes.length : 0;
+    const avg = numericVotes.length > 0 ? sum / numericVotes.length : 0;
+    const rounded = Math.round(avg) - 1;
+    return valueToSize[Math.max(0, Math.min(rounded, 4))] || "M";
   }, [room.game.table]);
 
   const agreement = useMemo(() => {
@@ -127,7 +137,7 @@ export const VoteDistributionChart: FC<VoteDistributionChartProps> = ({
       </ChartContainer>
       <CardFooter className="flex flex-row items-center justify-center pb-0">
         <CardTitle className="text-4xl tabular-nums mr-4">
-          {averageVote.toFixed(3)}{" "}
+          {averageVote}{" "}
           <span className="font-sans text-sm font-normal tracking-normal text-muted-foreground">
             average
           </span>

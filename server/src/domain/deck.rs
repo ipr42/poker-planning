@@ -14,22 +14,11 @@ impl Deck {
         Deck {
             id: Uuid::new_v4(),
             cards: vec![
-                "0".to_string(),
-                "0.125".to_string(),
-                "0.5".to_string(),
-                "1".to_string(),
-                "2".to_string(),
-                "3".to_string(),
-                "5".to_string(),
-                "8".to_string(),
-                "13".to_string(),
-                "21".to_string(),
-                "34".to_string(),
-                "55".to_string(),
-                "89".to_string(),
-                "∞".to_string(),
-                "?".to_string(),
-                "☕".to_string(),
+                "XS".to_string(),
+                "S".to_string(),
+                "M".to_string(),
+                "L".to_string(),
+                "XL".to_string(),
             ],
         }
     }
